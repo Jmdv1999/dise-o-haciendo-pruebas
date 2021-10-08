@@ -1,0 +1,504 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.contenedor{
+    padding: 40px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+.titulo{
+    color: #642a73;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+/*Cabecera*/
+header{
+    width: 100%;
+    height: 600px;
+    background: #642a73;
+    background: -webkit-linear-gradient(to right, #642a73, #bc4e9c);
+    background: linear-gradient(to right, hsla(288, 46%, 31%, 0.671), hsla(317, 45%, 52%, 0.671)), url(../img/shop.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    animation: cambio 16s ease-in-out infinite;
+    overflow: hidden;
+}
+.menu{
+    flex-wrap: wrap;
+    justify-content: space-between;
+    display: flex;
+}
+.logo{
+    width: 50%;
+    padding: 30px;
+    color: #fff;
+    transform: translateX(-250px);
+    transition: 0.8s;
+}
+nav{
+    width: 50%;
+    text-align: right;
+    padding: 30px;
+    transform: translateY(-70px);
+    transition: 0.8s;
+}
+nav a{
+    color: #fff;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 25px;
+    transition: all .3s;
+    font-weight: 800;
+}
+nav a:hover{
+    border-bottom: solid 2px #fff;
+}
+header .textos-header{
+    display: flex;
+    height: 430px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transform: translateY(200px);
+    opacity: 0;
+    transition: 0.6s ease;
+    overflow-y: hidden;
+}
+.textos-header h1{
+    font-size: 50px;
+    color: #fff;
+}
+.textos-header h2{
+    font-size: 30px;
+    font-weight: 300;
+    color: #fff;
+}
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+/*Servicios*/
+#servicios {
+    opacity: 0;
+    transition: all .6s;
+}
+.mostrar-arriba{
+    animation: mostrar 1s;
+}
+.contenido{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.contenido .circulo{
+    padding: 10px;
+    width: 30%;
+    height: 100%;
+    overflow: hidden; 
+    font-size: 2.8vmin;
+    animation: rotar 14s linear infinite;
+}
+
+.media{
+    width: 45%;
+}
+.media li{
+    list-style: none;
+    font-size: 1.4em;
+}
+.media li a{
+    color:#000;
+    text-decoration: none;
+}
+.media li{
+    transform: translateX(-500px);
+    opacity: 0;
+    transition: all 0.8s;
+}
+
+.media li:not(:last-child){
+    margin-bottom: 50px;
+}
+.media li:nth-child(1), .media li:nth-child(5){
+    padding-left: 100px;
+} 
+.media li:nth-child(2), .media li:nth-child(4){
+    padding-left: 50px;
+} 
+.media1{
+    width: 35%;
+    text-align: right;
+}
+.media1 li{
+    list-style: none;
+    font-size: 1.4em;
+}
+.media1 li{
+    transform: translateX(500px);
+    opacity: 0;
+    transition: all 0.8s;
+}
+.media1 li a{
+    color:#000;
+    text-decoration: none;
+}
+.media1 li:not(:last-child){
+    margin-bottom: 50px;
+}
+.media1 li:nth-child(1), .media1 li:nth-child(5){
+    padding-right: 100px;
+} 
+.media1 li:nth-child(2), .media1 li:nth-child(4){
+    padding-right: 50px;
+} 
+/*Sobre Nosotros*/
+.contenedor-sobre-nosotros{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 25px;
+}
+.imagen-nosotros{
+    width: 48%;
+}
+.sobre-nosotros .contenido-textos{
+    width: 48%;
+}
+.sobre-nosotros .contenido-textos h3 span{
+    background: #642a73;
+    color:#fff;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    margin-right: 5px;
+    opacity: 0;
+    transition: all .6s;
+}
+.contenido-textos p{
+    padding: 0px 0px 30px 15px;
+    font-weight: 300;
+    text-align: justify;
+}
+.texto-derecha{
+    transform: translateX(500px);
+    transition: all .6s;
+}
+.texto-izquierda{
+    transform: translateX(-500px);
+    transition: all .6s;
+}
+/*Galeria*/
+.portafolio{
+    background:#f2f2f2;
+}
+.galeria-port{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.imagen-port{
+    width: 24%;
+    height: 180px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+.imagen-port > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.hover-galeria{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: hsla(273,91%,27%,0.7);
+    transition:  transform .5s;
+    transform: scale(0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.hover-galeria img{
+    width: 50px;
+    height: 100px;
+}
+.hover-galeria p{
+    margin-top: 20px;
+    color: #fff;
+}
+.imagen-port:hover .hover-galeria{
+    transform: scale(1);
+}
+/*Galeria*/
+.sesgo-abajo{
+    z-index: 10;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 35vh 100vw;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+}
+.sesgo-arriba{
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 35vh 100vw 0 0;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+.galeria{
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+.imagenes{
+    width: 20%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+.imagenes img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.encima{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #642a73;
+    background: -webkit-linear-gradient(to right, #642a73, #bc4e9c);
+    background: linear-gradient(to right, hsla(288, 46%, 31%, 0.671), hsla(317, 45%, 52%, 0.671));
+}
+.encima h2{
+    position: relative;
+    top: 45%;
+    text-align: center;
+    color: #fff;
+}
+.encima div{
+    position: relative;
+    display: block;
+    top: 46%;
+    width: 40px;
+    height: 5px;
+    background: #fff;
+    margin: auto;
+}
+/*Pie De Pagina*/
+footer{
+    background: #642a73;
+    background: -webkit-linear-gradient(to right, #642a73, #bc4e9c);
+    background: linear-gradient(to right, hsla(288, 46%, 31%, 0.671), hsla(317, 45%, 52%, 0.671));
+    color:#fff;
+    font-size: 1em;
+    padding: 40px 0;
+
+}
+footer .contenedor{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.content-foo{
+    width: 33%;
+    text-align: center;
+}
+.content-foo p{
+    width: 100%;
+    display: block;
+}
+.content-foo p a{
+    text-decoration: none;
+    color:#fff;
+}
+.titulo-final{
+    text-align: center;
+    width: 100%;
+}
+
+/*Responsivo*/
+@media screen and (max-width:700px) {
+    .contenedor-sobre-nosotros{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 25px;
+        align-items: center;
+    }
+    .imagen-nosotros{
+        width: 90%;
+    }
+    .imagen-nosotros:nth-child(2){
+        display:none ;
+    }
+    .sobre-nosotros .contenido-textos{
+        width: 90%;
+    }
+    .imagenes{
+        width: 33%;
+        height: 500px;
+        overflow: hidden;
+    }   
+    .imagenes:nth-child(2), .imagenes:nth-child(6){
+        display: none;
+    }
+    .contenido{
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .media{
+        width: 90%;
+    }
+    .contenido .circulo{
+        width: 80%;
+        height: 100%;
+    }
+    .media1{
+        width: 90%;
+    }
+    .imagen-port{
+        width: 48%;
+        height: 180px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    }
+    .media li{
+        list-style: none;
+        font-size: 0.6em;
+    }
+    .media1 li{
+        list-style: none;
+        font-size: 0.6em;
+    }
+    .contenido .circulo{
+        font-size: 1.8vmin;
+    }
+    footer{
+        font-size: 0.8em;
+        padding: 40px 0;
+    }
+    .content-foo{
+        width: 100%;
+        text-align: center;
+    }
+    .titulo-final{
+        font-size: 1.2em;
+        text-align: center;
+        width: 100%;
+    }
+}
+@media screen and (max-width:400px) {
+    .menu{
+        justify-content: space-between;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+    }
+    .logo{
+        width: 80%;
+        text-align: center;
+    }
+    nav{
+        width: 80%;
+        text-align: center;
+    }
+    header .textos-header{
+        height: 150px;
+    }
+    .contenido-textos p {
+        font-size: 12px;
+        padding: 15px 15px;
+    }
+    .contenido-textos h3 {
+        font-size: 18px;
+    }
+    .encima h2 {
+        font-size: 15px;
+    }
+    .titulo-final{
+        font-size: 0.8em;
+    }
+}
+/*Animación para cambiar el fondo del header*/
+@keyframes cambio{
+    0%{
+        background: linear-gradient(to right, hsla(288, 46%, 31%, 0.671), hsla(317, 45%, 52%, 0.671)), url(../img/shop.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    25%{
+        background: linear-gradient(to right, hsla(288, 46%, 31%, 0.671), hsla(317, 45%, 52%, 0.671)), url(../img/bg.png);
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    50%{
+        background: linear-gradient(to right, hsla(288, 46%, 31%, 0.671), hsla(317, 45%, 52%, 0.671)), url(../img/Background.png);
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    100%{
+        background: linear-gradient(to right, hsla(288, 46%, 31%, 0.671), hsla(317, 45%, 52%, 0.671)), url(../img/image-header.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    
+    0%{
+        background: linear-gradient(to right, hsla(288, 46%, 31%, 0.671), hsla(317, 45%, 52%, 0.671)), url(../img/shop.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+    }
+}
+/*Animacion Para rotar texto*/
+@keyframes rotar{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes mostrar {
+    0%{
+        transform: translateY(60px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
